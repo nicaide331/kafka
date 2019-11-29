@@ -25,7 +25,7 @@ public class UserSerializer implements Serializer {
         byte[] ret = null;
         try {
             logger.warn("开始序列化");
-            ret =    objectMapper.writeValueAsString(data).getBytes("utf-8");
+            ret = objectMapper.writeValueAsString(data).getBytes("utf-8");
             logger.warn("开始序结束");
         } catch (IOException e) {
             logger.warn("序列化错误");
@@ -38,10 +38,6 @@ public class UserSerializer implements Serializer {
         objectMapper = new ObjectMapper();
     }
 
-    @Override
-    public byte[] serialize(String topic, Headers headers, Object data) {
-        return new byte[0];
-    }
 
     @Override
     public void close() {

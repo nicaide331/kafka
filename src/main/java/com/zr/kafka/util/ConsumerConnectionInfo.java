@@ -28,7 +28,7 @@ public class ConsumerConnectionInfo {
 //        props.put("connections.max.idle.ms", "-1");
 
         //检测失败后，开启reBalance,值要小于session.timeout.ms
-//        props.put("session.timeout.ms", "5000");
+        props.put("session.timeout.ms", "30000");
 
         //处理逻辑最大时间
         props.put("max.poll.interval.ms", "60000");

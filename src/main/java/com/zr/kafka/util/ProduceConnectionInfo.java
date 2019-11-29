@@ -25,8 +25,8 @@ public class ProduceConnectionInfo {
         props.put(ProducerConfig.BATCH_SIZE_CONFIG, 1048576);   //16kb
         props.put("linger.ms", 10);
 //        props.put("buffer.memory", 3354432); //32MB
-        props.put(ProducerConfig.BUFFER_MEMORY_CONFIG, 3354432);
-        props.put("max.block.ms", 3000);
+//        props.put(ProducerConfig.BUFFER_MEMORY_CONFIG, 3354432);
+//        props.put("max.block.ms", 3000);
 
         //最大消息尺寸
         props.put(ProducerConfig.MAX_REQUEST_SIZE_CONFIG, 10485760);

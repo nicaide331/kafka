@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 public class SerializerTest {
     public static void main(String[] args){
         Properties properties = ProduceConnectionInfo.getProperties();
-        properties.put("value.serializer", "com.zr.kafka.produce.serializer.UserSerializer");
+        properties.setProperty("value.serializer", "com.zr.kafka.produce.serializer.UserSerializer");
 
         String topic = "test";
 

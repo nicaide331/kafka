@@ -1,7 +1,7 @@
-package com.zr.kafka.demo;
+package com.zr.kafka.produce.demo;
 
 
-import com.zr.kafka.util.ConnectionInfo;
+import com.zr.kafka.util.ProduceConnectionInfo;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.errors.RetriableException;
 
@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 public class ProducerTest {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Properties props = ConnectionInfo.getProperties();
+        Properties props = ProduceConnectionInfo.getProperties();
 
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
 

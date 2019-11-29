@@ -1,6 +1,6 @@
-package com.zr.kafka.partition;
+package com.zr.kafka.produce.partition;
 
-import com.zr.kafka.util.ConnectionInfo;
+import com.zr.kafka.util.ProduceConnectionInfo;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -17,8 +17,8 @@ import java.util.concurrent.ExecutionException;
  */
 public class PartitionerTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Properties properties = ConnectionInfo.getProperties();
-        properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "com.zr.kafka.partition.AuditPartitioner");
+        Properties properties = ProduceConnectionInfo.getProperties();
+        properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, "com.zr.kafka.produce.partition.AuditPartitioner");
         String topic = "test";
         Producer<String, String> producer = new KafkaProducer<String, String>(properties);
         ProducerRecord nonKeyRecord = new ProducerRecord("test", "non-key record");

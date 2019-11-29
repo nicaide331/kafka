@@ -10,7 +10,7 @@ import java.util.Properties;
  * @author nicaide
  * @date 2019年11月28日 16:27:00
  */
-public class ConnectionInfo {
+public class ProduceConnectionInfo {
 
     public static Properties getProperties() {
         Properties props = new Properties();

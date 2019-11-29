@@ -1,4 +1,4 @@
-package com.zr.kafka.partition;
+package com.zr.kafka.produce.partition;
 
 
 import org.apache.kafka.common.Cluster;
@@ -6,7 +6,6 @@ import org.apache.kafka.common.Configurable;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.util.Map;
 
 /**
  * 自定义分区

@@ -21,7 +21,7 @@ public class ProducerTest {
 
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10000; i++) {
              ProducerRecord<String, String> record = new ProducerRecord<String, String>("test", String.valueOf(i));
 //             producer.send(record).get();
             producer.send(record, new Callback() {

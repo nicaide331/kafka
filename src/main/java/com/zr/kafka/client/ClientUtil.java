@@ -18,12 +18,19 @@ import static com.zr.kafka.util.PropertiesUtil.BROKER_URL;
  */
 public class ClientUtil {
 
+    private static AdminClient client;
 
     public static AdminClient connectClient() {
         Properties properties = new Properties();
         properties.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, BROKER_URL);
-        AdminClient client = AdminClient.create(properties);
+        client = AdminClient.create(properties);
         return client;
+    }
+
+    public static void closeClient() {
+        client.close();
+        System.out.println("Client关闭");
+
     }
 
     /**
@@ -41,8 +48,6 @@ public class ClientUtil {
         System.out.println("主题对象实例化成功");
         client.createTopics(Arrays.asList(newTopic));
         System.out.println("主题创建成功");
-        client.close();
-        System.out.println("Client关闭");
     }
 
     public static DescribeTopicsResult getTopicInfo(String topicName) {
@@ -62,6 +67,5 @@ public class ClientUtil {
         System.out.println("准备删除主题:" + topicName);
         client.deleteTopics(Arrays.asList(topicName));
         System.out.println(topicName + "删除成功");
-        client.close();
     }
 }

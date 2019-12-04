@@ -28,6 +28,9 @@ public class KafkaClientDemo {
         //删除主题
         ClientUtil.deleteTopic("demo");
 
+        //关闭连接
+        ClientUtil.closeClient();
+
 
     }
 }

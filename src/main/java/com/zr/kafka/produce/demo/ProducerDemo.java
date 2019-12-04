@@ -6,6 +6,7 @@ import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.errors.RetriableException;
 
 import java.util.Properties;
+import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -14,15 +15,18 @@ import java.util.concurrent.ExecutionException;
  * @author nicaide
  * @date 2019年11月28日 10:26:00
  */
-public class ProducerTest {
+public class ProducerDemo {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Properties props = ProduceConnectionInfo.getProperties();
 
         Producer<String, String> producer = new KafkaProducer<String, String>(props);
+        Scanner scanner = new Scanner(System.in);
+
 
          for (int i = 0; i < 10000; i++) {
-             ProducerRecord<String, String> record = new ProducerRecord<String, String>("test", String.valueOf(i));
+             String input = scanner.next();
+             ProducerRecord<String, String> record = new ProducerRecord<String, String>("test", input);
 //             producer.send(record).get();
             producer.send(record, new Callback() {
                 public void onCompletion(RecordMetadata recordMetadata, Exception e) {

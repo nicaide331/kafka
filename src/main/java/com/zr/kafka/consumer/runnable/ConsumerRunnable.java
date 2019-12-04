@@ -36,7 +36,7 @@ public class ConsumerRunnable implements Runnable {
     public void run() {
         while (true) {
             //本例使用200毫秒作为获取的超时时间
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(200));
+            ConsumerRecords<String, String> records = consumer.poll(2000);
 
             for (ConsumerRecord<String, String> record : records) {
                 //业务逻辑处理

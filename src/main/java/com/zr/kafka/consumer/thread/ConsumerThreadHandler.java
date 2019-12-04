@@ -58,7 +58,7 @@ public class ConsumerThreadHandler<K, V> {
 
         try {
             while (true) {
-                ConsumerRecords<K, V> records = consumer.poll(Duration.ofSeconds(1));
+                ConsumerRecords<K, V> records = consumer.poll(1000);
                 if (!records.isEmpty()) {
                     executors.submit(new ConsumerWorker<>(records, offsets));
                 }

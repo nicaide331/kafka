@@ -16,7 +16,7 @@ public class ConsumerConnectionInfo {
 
     public static Properties getProperties() {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "47.100.138.3:9092");
+        props.put("bootstrap.servers", "47.100.138.3:9092,47.105.168.40:9092,123.56.97.36:9092");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("group.id", GROUP_ID);

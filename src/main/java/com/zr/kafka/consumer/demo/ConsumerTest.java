@@ -29,10 +29,10 @@ public class ConsumerTest {
         try {
             while (true) {
                 //从订阅的topic方法里，获得多个分区的消息
-                ConsumerRecords<String, String> records = consumer.poll(1000);
+                ConsumerRecords<String, String> records = consumer.poll(5000);
                 //业务逻辑处理
                 for (ConsumerRecord<String, String> record : records) {
-                    System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
+//                    System.out.printf("offset = %d, key = %s, value = %s%n", record.offset(), record.key(), record.value());
                 }
             }
         } finally {

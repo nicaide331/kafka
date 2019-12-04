@@ -26,7 +26,7 @@ public class DeserializerTest {
         consumer.subscribe(Arrays.asList("test"));
         List<User> users = new ArrayList<>();
         List<ConsumerRecords<String, String>> list = new ArrayList<>();
-        ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(2));
+        ConsumerRecords<String, String> records = consumer.poll(2000);
         try {
             while (true) {
                 for (ConsumerRecord consumerRecord : records) {

@@ -15,7 +15,7 @@ public class ProduceConnectionInfo {
     public static Properties getProperties() {
         Properties props = new Properties();
         //创建Kafka服务器的连接，比如k1:9092
-        props.put("bootstrap.servers", "47.100.138.3:9092");
+        props.put("bootstrap.servers", "47.100.138.3:9092,47.105.168.40:9092,123.56.97.36:9092");
         props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 //        props.put("acks", "-1");
